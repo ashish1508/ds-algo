@@ -8,6 +8,7 @@
  */
 ListNode* deleteAndInsertBefore(ListNode* head, ListNode* node, int c){
   
+    // Deleting the node
     ListNode* prev=NULL, *curr=head;
     while(curr->val != node->val){
         prev = curr;
@@ -15,7 +16,7 @@ ListNode* deleteAndInsertBefore(ListNode* head, ListNode* node, int c){
     }
     prev->next = curr->next;
     
- 
+    // Inserting the node at appropriate position
     if(node->val <= head->val){
         node->next = head;
         return node;
@@ -32,13 +33,7 @@ ListNode* deleteAndInsertBefore(ListNode* head, ListNode* node, int c){
     return head;
     
 } 
-void display(ListNode* A){
-    while(A){
-        cout<<A->val<<" ";
-        A = A->next;
-    }
-    cout<<endl;
-}
+
 ListNode* Solution::insertionSortList(ListNode* A) {
     if(A==NULL || A->next==NULL) return A;
     ListNode* curr = A->next;
@@ -47,7 +42,6 @@ ListNode* Solution::insertionSortList(ListNode* A) {
     while(curr){
         ListNode* temp = curr->next;
         ret = deleteAndInsertBefore(ret,curr,nodes);
-        //display(ret);
         nodes++;
         curr = temp;
     }

@@ -24,3 +24,28 @@ public:
         return ans;
     }
 };
+
+// ****** better written code from discuss on leetcode *******
+// class Solution {
+// public:
+//     int maxSatisfied(vector<int>& cus, vector<int>& gpy, int k) 
+//     {
+//         int without=0,n=cus.size();
+//         for(int i=0;i<n;i++)
+//             if(gpy[i]==0)
+//                 without+=cus[i];
+//         for(int i=0;i<k;i++)
+//             if(gpy[i])
+//                 without+=cus[i];
+//         int res=without;
+//         for(int i=k,j=0;i<n;i++,j++)
+//         {
+//             if(gpy[j])
+//                 without-=cus[j];
+//             if(gpy[i])
+//                 without+=cus[i];
+//             res=max(res,without);
+//         }
+//         return res;
+//     }
+// };

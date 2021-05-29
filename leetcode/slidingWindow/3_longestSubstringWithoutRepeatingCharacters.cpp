@@ -1,3 +1,30 @@
+// easy implementation
+class Solution {
+public:
+
+    int lengthOfLongestSubstring(string s) {
+       vector<int> v(128,0);
+        int i=0,j=0, n=s.size(),ans=0;
+        while(j<n){
+            v[s[j]]++;
+            
+            while(v[s[j]]>1 && i<j){
+                v[s[i]]--;
+                i++;
+            }
+            ans = max(ans,j-i+1);
+            j++;
+        }
+        return ans;
+    }
+    
+};
+
+
+
+
+// first implementation
+
 class Solution {
 public:
     int onesAndZeroes(vector<int> &v){

@@ -1,3 +1,4 @@
+// my implementation 
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& nums) {
@@ -20,3 +21,21 @@ public:
         return nums[lo];
     }
 };
+
+// rofl easy solution from discuss :( ..why did I waste time -- to do using binary search :)
+
+class Solution {
+public:
+    int singleNonDuplicate(vector<int>& nums) {
+        if(nums.size()==1) return nums[0];
+        int i=0,j=1;
+        while(j<nums.size()){
+            if(nums[i]!=nums[j])
+                break;
+            i+=2;
+            j+=2;
+        }
+        return nums[i];
+    }
+};
+

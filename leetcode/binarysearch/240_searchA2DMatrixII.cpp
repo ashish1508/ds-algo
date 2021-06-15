@@ -1,3 +1,4 @@
+// find element greater than or equal to target in every row and dont change high index
 class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {

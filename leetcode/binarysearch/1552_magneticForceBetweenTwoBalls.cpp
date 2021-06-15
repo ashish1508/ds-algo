@@ -1,4 +1,3 @@
-
 class Solution {
 public:
     int check(vector<int> &pos,int diff, int m){
@@ -13,8 +12,9 @@ public:
         return m==0;
     }
     int maxDistance(vector<int>& position, int m) {
-        int lo=1,hi=INT_MAX-1,mid;
         sort(position.begin(),position.end());
+        // min force and max force
+         int lo=1,hi=A[position.size()]-A[0],mid;
         while(lo<=hi){
             mid=lo+(hi-lo)/2;
             if(check(position,mid,m)) lo=mid+1;

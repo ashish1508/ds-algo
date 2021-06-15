@@ -16,3 +16,7 @@ public:
         return false;
     }
 };
+
+
+// reduce search space in other way --- different approach from discuss 
+// https://leetcode.com/problems/search-a-2d-matrix-ii/discuss/66139/C%2B%2B-search-from-top-right

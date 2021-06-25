@@ -1,3 +1,6 @@
+
+// Iterative approach from leetcode discuss tab https://leetcode.com/problems/letter-combinations-of-a-phone-number/discuss/8090/Iterative-c%2B%2B-solution-in-0ms
+// Bactracking approach
 class Solution {
 public:
     void getCombinations(int s, string &path, vector<string> &vs, string &digits, vector<string> &dialpad){

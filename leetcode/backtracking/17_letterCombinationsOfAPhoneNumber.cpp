@@ -23,3 +23,25 @@ public:
         return vs;
     }
 };
+// Iterative approach
+class Solution {
+public:
+
+    vector<string> letterCombinations(string digits) {
+        if(digits.size()==0) return {};
+        vector<string> dialpad = {"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+        vector<string> res;
+        res.push_back("");
+        for(int i=0;i<digits.size();i++){
+            vector<string> tmp;
+            for(int j=0;j<dialpad[digits[i]-'0'].size();j++){
+                for(int k=0;k<res.size();k++){
+                    tmp.push_back(res[k] + dialpad[digits[i]-'0'][j]); 
+                }   
+            }
+            swap(tmp,res);    
+        }
+        
+        return res;
+    }
+};

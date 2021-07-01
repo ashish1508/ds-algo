@@ -1,11 +1,9 @@
 class Solution {
 public:
-    void removeInvalid(int l,int r,int index,string &path, string &s, int n, unordered_set<string> &ans){
+    void removeInvalid(int l,int r,int index,string &path, string &s, int &n, unordered_set<string> &ans){
         
-         
         if(index==s.size() && l==n && r==n){
-            if(path.size())
-                ans.insert(path);
+            ans.insert(path);
             return;
         }
         if(index==s.size()) return;
@@ -20,7 +18,6 @@ public:
         }
         
         if(s[index]==')'){
-            //cout<<path.size()<<endl;
             if(r<l){
                 path.push_back(')');
                 removeInvalid(l,r+1,index+1,path,s,n,ans);

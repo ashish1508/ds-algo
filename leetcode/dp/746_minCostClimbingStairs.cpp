@@ -30,3 +30,4 @@ public:
         
     }
 };
+// can also do with O(1) space using 3 variables

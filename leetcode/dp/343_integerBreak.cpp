@@ -1,5 +1,6 @@
 // can improve the solution 
-// leetcode discuss solutions are great
+// leetcode discuss solutions are great in O(1) space O(1) time and other less time complexities
+// bottom up : https://leetcode.com/problems/integer-break/discuss/224403/c-0-ms-1000-dp-iterative-solution-like-rod-cutting-problem
 // top down
 class Solution {
 public:

@@ -1,3 +1,6 @@
+
+// my solution (easy)
+
 class Solution
 {
 public:
@@ -13,5 +16,27 @@ public:
         //code here
         Node* temp = NULL;
         reverseInorder(root,temp);
+    }
+};
+
+// hp solution (complicated)
+class Solution
+{
+public:
+    Node* inorder(Node *root, Node *parent){
+        if(!root)return NULL;
+        Node *left = inorder(root->left, root);
+        root->next = parent;
+        Node *right = inorder(root->right, parent);
+        if(right){
+            root->next = right;
+        };
+        if(left)return left;
+        return root;
+    }
+    
+    void populateNext(Node *root)
+    {
+        inorder(root, NULL);
     }
 };
